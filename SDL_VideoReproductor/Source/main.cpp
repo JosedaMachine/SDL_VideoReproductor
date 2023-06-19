@@ -3,12 +3,10 @@
 #include <iostream>
 
 extern "C" {
-
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
-#include <libswscale/swscale.h>
-#include <libavutil/imgutils.h>
-
+	#include <libavcodec/avcodec.h>
+	#include <libavformat/avformat.h>
+	#include <libswscale/swscale.h>
+	#include <libavutil/imgutils.h>
 }
 
 int main(int argc, char* argv[]) {
