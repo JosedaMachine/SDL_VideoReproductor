@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\utils">
+      <UniqueIdentifier>{bef663be-8f8f-4985-8ef1-bf380ebcfed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\utils">
+      <UniqueIdentifier>{f2a6f162-5a71-4103-b7d8-d03f01029c35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\main.cpp">
@@ -21,10 +27,16 @@
     <ClCompile Include="..\..\Source\VideoSource.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\sdl_utils.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\VideoSource.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\sdl_utils.h">
+      <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

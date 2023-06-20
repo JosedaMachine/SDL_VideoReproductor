@@ -10,12 +10,13 @@ extern "C" {
 	#include <libswscale/swscale.h>
 }
 
-VideoSource::VideoSource(const char* filename, bool loop): 
-	m_Loop(loop)
+VideoSource::VideoSource(const char* filename, bool loop)
+	: m_Loop(loop)
 {
+	//Allocate memory to the format context
 	m_Format_Context = avformat_alloc_context();
 
-	// load the headers
+	// open video file 
 	if (avformat_open_input(&m_Format_Context, filename, NULL, NULL) != 0) {
 		std::cout << "Couldn't open input stream.\n" << std::endl;
 		//return -1;
@@ -61,7 +62,7 @@ VideoSource::VideoSource(const char* filename, bool loop):
 		return;
 	}
 
-	//// allocate and initialise the output buffer
+	// allocate and initialise the output buffer
 	m_Frame = av_frame_alloc();
 	m_FrameYUV = av_frame_alloc();
 
@@ -83,7 +84,7 @@ VideoSource::VideoSource(const char* filename, bool loop):
 		m_Code_Context->pix_fmt, m_Code_Context->width, m_Code_Context->height,
 		AV_PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL);
 
-	// calculate frame rate
+	//Calculate frame rate
 	m_TimePerFrame = static_cast<uint32_t>(1000.0
 		/ av_q2d(m_Format_Context->streams[m_VideoIndex]->r_frame_rate));
 }

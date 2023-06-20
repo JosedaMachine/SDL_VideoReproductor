@@ -1,26 +1,9 @@
 #include <SDL.h>
-
 #include <iostream>
 
-extern "C" {
-	#include <libavcodec/avcodec.h>
-	#include <libavformat/avformat.h>
-	#include <libswscale/swscale.h>
-	#include <libavutil/imgutils.h>
-}
+#include "VideoSource.h"
 
 int main(int argc, char* argv[]) {
-
-	// Inicializar el formato de FFmpeg
-	avformat_network_init();
-
-	// Obtener la versión de FFmpeg
-	const char* ffmpegVersion = av_version_info();
-
-	// Imprimir la versión de FFmpeg
-	std::cout << "Hello, FFmpeg!" << std::endl;
-	std::cout << "FFmpeg version: " << ffmpegVersion << std::endl;
-
 
 	// Inicializar SDL
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
